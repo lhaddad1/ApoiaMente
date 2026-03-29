@@ -1,55 +1,74 @@
 import { Link } from 'expo-router';
-import { Image, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Alert, Image, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Button } from '@/components/Button';
 import { Input } from '@/components/input';
 
 export default function Index() {
-  return (
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    function handleSignIn() {
+        if(!email.trim() || !password.trim()) {
+           return Alert.alert('Erro', 'Por favor, preencha todos os campos.');    
+        }
+        Alert.alert('Bem-vindo', `${email}!`);
+    }
+
+
+    return (
     
 <KeyboardAvoidingView 
-  style={{ flex: 1, backgroundColor: '#cee8fa' }} 
+  style={{ flex: 1, backgroundColor: '#a3d4f4' }} 
   behavior={Platform.select({ ios: 'padding', android: 'height' })}
 >
-<ScrollView 
-  contentContainerStyle={{ flexGrow: 1, backgroundColor: '#cee8fa' }}
-  keyboardShouldPersistTaps='handled'
-  showsVerticalScrollIndicator={false}
->
-    <View style={styles.container}>
-            
-            <Image
-            source={require('@/assets/logoP2.png')} 
-            style={styles.illustration}
-            />
+    <ScrollView 
+    contentContainerStyle={{ flexGrow: 1 }}
+    keyboardShouldPersistTaps='handled'
+    showsVerticalScrollIndicator={false}
+    >
+        <View style={styles.container}>
+                
+                    <Image
+                    source={require('@/assets/logoP3.png')} 
+                    style={styles.illustration}
+                    />
 
-        <Text style={styles.title}>Bem-vindo ao ApoiaMente.
-        </Text>
+                <Text style={styles.title}>Bem-vindo ao ApoiaMente.
+                </Text>
 
-        <Text style={styles.subtitle}>
-            Sua jornada de bem-estar começa aqui!
-        </Text>
+                <Text style={styles.subtitle}>
+                    Sua jornada de bem-estar começa aqui!
+                </Text>
 
 
-        <View style={styles.form}>
-            <Input placeholder='E-mail' keyboardType='email-address'/> 
-            <Input placeholder='Senha' secureTextEntry/>
+                <View style={styles.form}>
+                    <Input placeholder='E-mail' keyboardType='email-address' onChangeText={setEmail}/> 
+                    <Input placeholder='Senha' secureTextEntry onChangeText={setPassword}/>
+                </View>
+
+                <View style ={ styles.forgotPassword}>
+                    <Link href='./forgotpassword' style={styles.footerLink}>
+                        Esqueceu a senha?
+                    </Link>
+                </View>
+
+                <View style={styles.Button}>
+                    <Button label='Entrar' onPress={handleSignIn}/>
+                </View>
+
+                <View style={styles.footerText}>
+                    <Text style={styles.subtitle}>Não tem uma conta?{' '}
+
+                        <Link href='./singup' style={styles.footerLink}>
+                            Cadastre-se
+                        </Link>
+                    </Text>
+                </View>
+
         </View>
 
-        <View style={styles.Button}>
-            <Button label='Entrar'/>
-        </View>
-
-        <View style={styles.footerText}>
-            <Text style={styles.subtitle}>Não tem uma conta?{' '}
-
-                <Link href='./singup' style={styles.footerLink}>
-                    Cadastre-se
-                </Link>
-            </Text>
-        </View>
-
-        </View>
     </ScrollView>
 </KeyboardAvoidingView>
   );
@@ -58,6 +77,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 32,
+        backgroundColor: '#a3d4f4',
 
     },
     illustration: {
@@ -89,7 +109,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     footerLink: {
-        color: '#007BFF',
+        color: '#3b78a5',
         fontWeight: 700,
-    }
+    },
+    forgotPassword: {
+        marginTop: 10,
+        alignItems: 'flex-end',
+    },
 });

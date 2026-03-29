@@ -1,63 +1,55 @@
-
 import { Image, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Button } from '@/components/Button';
 import { Input } from '@/components/input';
 import { Link, useRouter } from 'expo-router';
 
-export default function SingUp() {
+//Tela de recuperação de senha, onde o usuário pode inserir um novo password para acessar sua conta.
+//A tela so será acessada através do Link que foi mandado pelo e-mail.
+
+export default function Index() {
     const router = useRouter();
-
   return (
-
+    
 <KeyboardAvoidingView 
   style={{ flex: 1, backgroundColor: '#a3d4f4' }} 
   behavior={Platform.select({ ios: 'padding', android: 'height' })}
 >
-    <ScrollView 
-    contentContainerStyle={{ flexGrow: 1 }}   
-    keyboardShouldPersistTaps='handled'
-    showsVerticalScrollIndicator={false}
-    >
-        <View style={styles.container}>
-                
+<ScrollView 
+  contentContainerStyle={{ flexGrow: 1 }}
+  keyboardShouldPersistTaps='handled'
+  showsVerticalScrollIndicator={false}
+>
+    <View style={styles.container}>
+            
                 <Image
                 source={require('@/assets/logoP3.png')} 
                 style={styles.illustration}
                 />
 
-            <Text style={styles.title}>Cadastre-se
+            <Text style={styles.title}>Esqueceu a senha ?
             </Text>
 
             <Text style={styles.subtitle}>
-                Crie sua conta para começar a jornada de bem-estar!
+                Insira a sua senha para acessar sua conta.
             </Text>
 
 
             <View style={styles.form}>
-                <Input placeholder='Nome' />            
-                <Input placeholder='E-mail' keyboardType='email-address'/> 
                 <Input placeholder='Senha' secureTextEntry/>
                 <Input placeholder='Confirmar Senha' secureTextEntry/>
             </View>
 
             <View style={styles.Button}>
-                <Link href='./' style={{ width: '100%' }}>
-                    <Button label='Cadastrar' onPress={() => router.push('/')}/>
+                <Link href='./index' style={{ width: '100%' }}>
+                    <Button label='Alterar Senha' onPress={() => router.push('/')}/>
                 </Link>
+                <Button label='Alterar Senha' onPress={() => router.push('/')}/>
             </View>
 
-            <View style={styles.footerText}>
-                <Text style={styles.subtitle}>Já tem uma conta ?{' '}
+        </View>
 
-                    <Link href='./' style={styles.footerLink}>
-                        Entre aqui!
-                    </Link>
-                </Text>
-            </View>
-
-            </View>
-     </ScrollView>
+    </ScrollView>
 </KeyboardAvoidingView>
   );
 }
@@ -72,12 +64,12 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 350,
         resizeMode: 'contain',
-        marginTop: 22,
+        marginTop: 62,
     },
     title: {
         fontSize: 20,
         fontWeight: 600,
-        marginTop: -60,
+        marginTop: -50,
         textAlign: 'center'
     },
     subtitle: {
@@ -86,11 +78,11 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     form: {
-        marginTop: 30,
+        marginTop: 50,
         gap: 16,
     },
     Button: {
-        marginTop: 32,
+        marginTop: 40,
     },
     footerText: {
         marginTop: 16,
@@ -99,5 +91,9 @@ const styles = StyleSheet.create({
     footerLink: {
         color: '#3b78a5',
         fontWeight: 700,
-    }
+    },
+    forgotPassword: {
+        marginTop: 10,
+        alignItems: 'flex-end',
+    },
 });
