@@ -4,6 +4,7 @@ import { Button } from '@/components/Button';
 import { Input } from '@/components/input';
 import { Link, useRouter } from 'expo-router';
 
+<<<<<<< HEAD
 import { useState } from 'react';
 import { Alert } from 'react-native';
 import { findUserByEmail } from '@/database/userModel';
@@ -30,6 +31,11 @@ export default function Index() {
         params: { email }
     });
 }
+=======
+
+export default function Index() {
+    const router = useRouter();
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
 
   return (
     
@@ -58,12 +64,20 @@ export default function Index() {
 
 
             <View style={styles.form}>
+<<<<<<< HEAD
                 <Input placeholder='E-mail' keyboardType='email-address' onChangeText={setEmail}/> 
+=======
+                <Input placeholder='E-mail' keyboardType='email-address'/> 
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
             </View>
 
             <View style={styles.Button}>
                 <Link href='./index' style={{ width: '100%' }}>
+<<<<<<< HEAD
                     <Button label='Enviar' onPress={handleForgotPassword}/>
+=======
+                    <Button label='Enviar' onPress={() => router.push('/')}/>
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
                 </Link>
             </View>
 

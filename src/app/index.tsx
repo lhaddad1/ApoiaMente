@@ -5,12 +5,16 @@ import { Alert, Image, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, T
 import { Button } from '@/components/Button';
 import { Input } from '@/components/input';
 
+<<<<<<< HEAD
 import { loginUser } from '@/database/userModel';
 
+=======
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
 export default function Index() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+<<<<<<< HEAD
     async function handleSignIn() {
         if (!email.trim() || !password.trim()) {
             return Alert.alert('Erro', 'Por favor, preencha todos os campos.');
@@ -26,6 +30,16 @@ export default function Index() {
         }
     }
 
+=======
+    function handleSignIn() {
+        if(!email.trim() || !password.trim()) {
+           return Alert.alert('Erro', 'Por favor, preencha todos os campos.');    
+        }
+        Alert.alert('Bem-vindo', `${email}!`);
+    }
+
+
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
     return (
     
 <KeyboardAvoidingView 

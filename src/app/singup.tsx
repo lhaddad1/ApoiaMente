@@ -5,6 +5,7 @@ import { Button } from '@/components/Button';
 import { Input } from '@/components/input';
 import { Link, useRouter } from 'expo-router';
 
+<<<<<<< HEAD
 import { useState } from 'react';
 import { Alert } from 'react-native';
 import { createUser } from '@/database/userModel';
@@ -35,6 +36,10 @@ export default function SingUp() {
   }
 }
 
+=======
+export default function SingUp() {
+    const router = useRouter();
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
 
   return (
 
@@ -63,15 +68,26 @@ export default function SingUp() {
 
 
             <View style={styles.form}>
+<<<<<<< HEAD
                 <Input placeholder='Nome' onChangeText={setName} />            
                 <Input placeholder='E-mail' keyboardType='email-address' onChangeText={setEmail}/> 
                 <Input placeholder='Senha' secureTextEntry onChangeText={setPassword}/>
                 <Input placeholder='Confirmar Senha' secureTextEntry onChangeText={setConfirmPassword}/>
+=======
+                <Input placeholder='Nome' />            
+                <Input placeholder='E-mail' keyboardType='email-address'/> 
+                <Input placeholder='Senha' secureTextEntry/>
+                <Input placeholder='Confirmar Senha' secureTextEntry/>
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
             </View>
 
             <View style={styles.Button}>
                 <Link href='./' style={{ width: '100%' }}>
+<<<<<<< HEAD
                     <Button label='Cadastrar' onPress={handleSignUp}/>
+=======
+                    <Button label='Cadastrar' onPress={() => router.push('/')}/>
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
                 </Link>
             </View>
 

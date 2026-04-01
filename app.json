@@ -1,5 +1,6 @@
 {
   "expo": {
+<<<<<<< HEAD
     "name": "apoiaBD",
     "slug": "apoiaBD",
     "version": "1.0.0",
@@ -8,6 +9,20 @@
     "scheme": "apoiabd",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+=======
+    "name": "ApoiaMente",
+    "slug": "ApoiaMente",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "apoiamente",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
     "ios": {
       "supportsTablet": true
     },
@@ -18,14 +33,22 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
+<<<<<<< HEAD
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
     "web": {
+=======
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "bundler": "metro",
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+<<<<<<< HEAD
       "expo-router",
       [
         "expo-splash-screen",
@@ -43,6 +66,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+=======
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
     }
   }
 }

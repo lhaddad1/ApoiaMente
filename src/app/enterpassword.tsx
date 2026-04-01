@@ -4,6 +4,7 @@ import { Button } from '@/components/Button';
 import { Input } from '@/components/input';
 import { Link, useRouter } from 'expo-router';
 
+<<<<<<< HEAD
 import { useState } from 'react';
 import { Alert } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
@@ -11,10 +12,13 @@ import { updatePassword } from '@/database/userModel';
 
 
 
+=======
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
 //Tela de recuperação de senha, onde o usuário pode inserir um novo password para acessar sua conta.
 //A tela so será acessada através do Link que foi mandado pelo e-mail.
 
 export default function Index() {
+<<<<<<< HEAD
     const { email } = useLocalSearchParams();
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -40,6 +44,9 @@ export default function Index() {
 }
 
 
+=======
+    const router = useRouter();
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
   return (
     
 <KeyboardAvoidingView 
@@ -67,14 +74,25 @@ export default function Index() {
 
 
             <View style={styles.form}>
+<<<<<<< HEAD
                 <Input placeholder='Senha' secureTextEntry onChangeText={setPassword}/>
                 <Input placeholder='Confirmar Senha' secureTextEntry onChangeText={setConfirmPassword}/>
+=======
+                <Input placeholder='Senha' secureTextEntry/>
+                <Input placeholder='Confirmar Senha' secureTextEntry/>
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
             </View>
 
             <View style={styles.Button}>
                 <Link href='./index' style={{ width: '100%' }}>
+<<<<<<< HEAD
                     <Button label='Alterar Senha' onPress={handleUpdatePassword}/>
                 </Link>
+=======
+                    <Button label='Alterar Senha' onPress={() => router.push('/')}/>
+                </Link>
+                <Button label='Alterar Senha' onPress={() => router.push('/')}/>
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
             </View>
 
         </View>

@@ -36,8 +36,11 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+<<<<<<< HEAD
 app-example
 
+=======
+>>>>>>> 44b12f7a7cb6454114ad925343166ae6471eac3f
 # generated native folders
 /ios
 /android
