@@ -16,8 +16,9 @@ export default function Index() {
             return Alert.alert('Erro', 'Por favor, preencha todos os campos.');
         }
 
-        const user = await loginUser(email, password);
-
+        //const user = await loginUser(email, password);
+        const user = (await loginUser(email, password)) as { name: string } | null
+        
         if (user) {
             Alert.alert('Bem Vindo', `Olá ${user.name}!`);
         } else {
